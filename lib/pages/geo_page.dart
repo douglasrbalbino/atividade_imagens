@@ -6,8 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:atividade_images/services/location_service.dart';
 
 class GeoPage extends StatefulWidget {
-  const GeoPage({super.key, required this.title});
-  final String title;
+  const GeoPage({super.key});
 
   @override
   State<GeoPage> createState() => _GeoPageState();
@@ -160,7 +159,6 @@ class _GeoPageState extends State<GeoPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
       ),
       body: bodyContent,
 
