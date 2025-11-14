@@ -2,17 +2,16 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
-    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.example.atividade_images"
-    compileSdk = 34
+    compileSdk = 36 // CORRIGIDO para a versão compatível com os plugins.
 
     defaultConfig {
         applicationId = "com.example.atividade_images"
         minSdk = flutter.minSdkVersion
-        targetSdk = 34
+        targetSdk = 36 // ATUALIZADO para a versão de compilação.
         versionCode = 1
         versionName = "1.0"
     }
@@ -39,9 +38,5 @@ flutter {
 }
 
 dependencies {
-    val firebaseBom = platform("com.google.firebase:firebase-bom:33.5.1")
-    implementation(firebaseBom)
-
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-storage-ktx")
+    // dependências do Firebase REMOVIDAS
 }

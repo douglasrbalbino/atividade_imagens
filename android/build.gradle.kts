@@ -27,6 +27,5 @@ tasks.register<Delete>("clean") {
 plugins {
   // ... (mantenha os plugins existentes, se houver)
 
-  // Adiciona o plugin do Google Services (versão única e correta)
-  id("com.google.gms.google-services") version "4.4.1" apply false
+  // id("com.google.gms.google-services") version "4.4.1" apply false // REMOVIDO
 }
