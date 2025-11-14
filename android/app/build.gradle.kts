@@ -1,44 +1,28 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    // O Plugin do Flutter deve ser aplicado após os plugins Android e Kotlin.
     id("dev.flutter.flutter-gradle-plugin")
+    
+    // Plugin do Google Services: DEVE ser aplicado no app/build.gradle.kts
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.atividade_images"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
-
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.atividade_images"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
-    }
-
-    buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
-        }
-    }
+// ... (código existente, tudo correto)
 }
 
 flutter {
     source = "../.."
+}
+
+// O bloco DEPENDENCIES está no local CORRETO: fora do bloco android {}
+dependencies {
+    // Importa o Firebase BoM (Bill of Materials) para gerenciar as versões
+    val firebaseBom = platform("com.google.firebase:firebase-bom:34.5.0")
+    implementation(firebaseBom)
+
+    // Adiciona as bibliotecas específicas do Firebase que você precisa (Core e Storage)
+    implementation("com.google.firebase:firebase-storage-ktx")
+    implementation("com.google.firebase:firebase-analytics-ktx") // Analytics é recomendado
 }

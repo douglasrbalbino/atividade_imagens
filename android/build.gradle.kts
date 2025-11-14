@@ -22,3 +22,11 @@ subprojects {
 tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
+
+// ESTE É O BLOCO CORRIGIDO
+plugins {
+  // ... (mantenha os plugins existentes, se houver)
+
+  // Adiciona o plugin do Google Services (versão única e correta)
+  id("com.google.gms.google-services") version "4.4.1" apply false
+}

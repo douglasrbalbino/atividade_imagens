@@ -132,10 +132,9 @@ class _GeoPageState extends State<GeoPage> {
     }
 
     return Scaffold(
-main
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      backgroundColor: Colors.white,
 
+      // ⬇️ AQUI É O PULO DO GATO: sem AppBar, layout em coluna
       body: Column(
         children: [
           const Header(), // SEU COMPONENTE NO TOPO 🎯
@@ -143,7 +142,6 @@ main
             child: content, // mapa/tela de erro/tela de loading
           ),
         ],
-main
       ),
 
       floatingActionButton: FloatingActionButton(

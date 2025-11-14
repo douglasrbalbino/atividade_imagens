@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1094181916136",
+    "project_id": "imagensatividade",
+    "storage_bucket": "imagensatividade.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094181916136:android:e320223355ebdb6dd8285d",
+        "android_client_info": {
+          "package_name": "com.example.atividade_images"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS__gSMuBFcFg-3NTgWotCpLhl0WccG1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
