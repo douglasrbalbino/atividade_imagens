@@ -1,4 +1,4 @@
-import 'package:atividade_images/pages/geo_page.dart';
+import 'package:atividade_images/pages/image_capture_page.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const GeoPage(title: 'localização dos guri'),
+      home: const ImageCapturePage(title: 'localização dos guri'),
       debugShowCheckedModeBanner: false,
     );
   }

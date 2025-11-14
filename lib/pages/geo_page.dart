@@ -6,8 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:atividade_images/services/location_service.dart';
 
 class GeoPage extends StatefulWidget {
-  const GeoPage({super.key, required this.title});
-  final String title;
+  const GeoPage({super.key});
 
   @override
   State<GeoPage> createState() => _GeoPageState();
@@ -133,7 +132,9 @@ class _GeoPageState extends State<GeoPage> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.white,
+main
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
       body: Column(
         children: [
@@ -142,6 +143,7 @@ class _GeoPageState extends State<GeoPage> {
             child: content, // mapa/tela de erro/tela de loading
           ),
         ],
+main
       ),
 
       floatingActionButton: FloatingActionButton(
