@@ -1,28 +1,47 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // O Plugin do Flutter deve ser aplicado após os plugins Android e Kotlin.
     id("dev.flutter.flutter-gradle-plugin")
-    
-    // Plugin do Google Services: DEVE ser aplicado no app/build.gradle.kts
     id("com.google.gms.google-services")
 }
 
 android {
-// ... (código existente, tudo correto)
+    namespace = "com.example.atividade_images"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.atividade_images"
+        minSdk = flutter.minSdkVersion
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            isShrinkResources = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 flutter {
     source = "../.."
 }
 
-// O bloco DEPENDENCIES está no local CORRETO: fora do bloco android {}
 dependencies {
-    // Importa o Firebase BoM (Bill of Materials) para gerenciar as versões
-    val firebaseBom = platform("com.google.firebase:firebase-bom:34.5.0")
+    val firebaseBom = platform("com.google.firebase:firebase-bom:33.5.1")
     implementation(firebaseBom)
 
-    // Adiciona as bibliotecas específicas do Firebase que você precisa (Core e Storage)
+    implementation("com.google.firebase:firebase-analytics-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
-    implementation("com.google.firebase:firebase-analytics-ktx") // Analytics é recomendado
 }
